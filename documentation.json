@@ -1,0 +1,86 @@
+{
+  "name": "Maicon Ferreira Documentation",
+  "initialRoute": "introduction",
+  "colors": {
+    "light": {
+      "brand": "#1c1c4c"
+    },
+    "dark": {
+      "brand": "#555579"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction",
+                "icon": "star"
+              },
+              {
+                "title": "Getting Started",
+                "path": "getting-started",
+                "icon": "play"
+              }
+            ]
+          },
+          {
+            "group": "Using the Marketplace",
+            "icon": "compass",
+            "pages": [
+              {
+                "title": "Buying Domains",
+                "path": "buying-domains",
+                "icon": "target"
+              },
+              {
+                "title": "Account Management",
+                "path": "account-management",
+                "icon": "user"
+              }
+            ]
+          },
+          {
+            "group": "Help & Support",
+            "icon": "help-circle",
+            "pages": [
+              {
+                "title": "FAQ",
+                "path": "faq",
+                "icon": "info"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "openapi": "openapi.yaml"
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock",
+        "pages": [
+          {
+            "title": "Release History",
+            "path": "changelog",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+}

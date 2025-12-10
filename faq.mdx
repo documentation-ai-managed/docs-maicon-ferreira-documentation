@@ -1,0 +1,122 @@
+---
+title: Frequently Asked Questions
+description: Common queries about using Safe, domain ownership, and platform functionality to help users resolve doubts quickly.
+---
+
+## Overview
+
+Safe simplifies finding and buying your perfect domain name. You can browse thousands of available domains, complete purchases securely, and manage ownership effortlessly. This FAQ addresses key questions on registration, post-purchase steps, troubleshooting, and support.
+
+<Callout kind="info">
+  Most issues resolve with these steps. For personalized help, contact support directly.
+</Callout>
+
+## Domain Registration Process
+
+Follow these steps to register your domain on Safe.
+
+<Steps>
+  <Step title="Search for Domains" icon="search">
+    Enter your desired domain name in the search bar. Filter by extension like `.com`, `.io`, or `.app`.
+  </Step>
+  <Step title="Review Results" icon="list">
+    Browse matching domains with pricing and availability. Check WHOIS privacy options.
+  </Step>
+  <Step title="Add to Cart" icon="shopping-cart">
+    Select your domain and click **Add to Cart**. Review details before checkout.
+  </Step>
+  <Step title="Complete Purchase" icon="credit-card">
+    Enter payment info and confirm. You'll receive instant confirmation.
+  </Step>
+</Steps>
+
+## Purchase and Ownership FAQs
+
+<ExpandableGroup>
+  <Expandable title="What happens after I purchase a domain?">
+    Safe transfers ownership immediately. You gain full control via your dashboard.
+
+    ```mermaid
+    graph LR
+        A[Purchase Complete] --> B[Email Confirmation]
+        B --> C[Dashboard Access]
+        C --> D[DNS Setup]
+        D --> E[Live Domain]
+    ```
+
+    Update DNS records at your registrar or hosting provider to point to your site.
+  </Expandable>
+
+  <Expandable title="How do I transfer my domain out of Safe?">
+    Log in to your dashboard, navigate to **Domain Management**, and generate an auth code. Submit it to your new registrar.
+
+    Domains unlock after 60 days per ICANN rules.
+  </Expandable>
+
+  <Expandable title="What payment methods do you accept?">
+    Credit cards (Visa, Mastercard), PayPal, and Apple Pay. All transactions use 256-bit SSL encryption.
+  </Expandable>
+</ExpandableGroup>
+
+## Troubleshooting Common Issues
+
+Resolve issues quickly based on your setup.
+
+<Tabs>
+  <Tab title="DNS Propagation" icon="globe">
+    DNS changes take 24-48 hours to propagate globally.
+
+    <CodeGroup tabs="BIND,Cloudflare">
+    ```javascript
+    // Example A record in BIND zone file
+    example.com. 3600 IN A 192.0.2.1
+    ```
+    ```javascript
+    // Cloudflare DNS settings
+    {
+      "type": "A",
+      "name": "example.com",
+      "content": "192.0.2.1",
+      "ttl": 3600
+    }
+    ```
+    </CodeGroup>
+
+    Use tools like `dig example.com` or online checkers.
+  </Tab>
+  <Tab title="Domain Not Resolving" icon="alert-triangle">
+    Verify nameservers match Safe's: `ns1.safe.domains` and `ns2.safe.domains`.
+
+    Clear your local DNS cache:
+    ```bash
+    # macOS
+    sudo dscacheutil -flushcache
+
+    # Windows
+    ipconfig /flushdns
+    ```
+  </Tab>
+  <Tab title="Renewal Failed" icon="clock">
+    Check billing info in your account. Renew manually via dashboard or set auto-renew.
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Propagation delays are normal. Monitor with `whois yourdomain.com` for status.
+</Callout>
+
+## Contact Support
+
+Reach our team through these channels.
+
+<Columns cols={3}>
+  <Card title="Email Support" icon="mail" href="mailto:support@safe.domains">
+    For billing or ownership queries. Response within 24 hours.
+  </Card>
+  <Card title="Live Chat" icon="message-circle" href="/chat">
+    Instant help for technical issues, Mon-Fri 9AM-6PM EST.
+  </Card>
+  <Card title="Knowledge Base" icon="book-open" href="/docs">
+    Self-serve guides and tutorials.
+  </Card>
+</Columns>

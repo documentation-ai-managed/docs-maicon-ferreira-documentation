@@ -1,0 +1,115 @@
+---
+title: Managing Your Safe Account
+description: Learn how to configure your account settings, track purchases, and manage your domain portfolio effectively on the platform.
+---
+
+## Overview
+
+Manage your Safe account to keep your domain purchases organized and secure. Update your profile, review transaction history, handle renewals, and adjust privacy settings directly from the dashboard. Access these features from the account menu in the top-right corner after logging in.
+
+<Columns cols={3}>
+  <Card title="Profile Settings" icon="user" href="/account/profile">
+    Update your personal information and preferences.
+  </Card>
+  <Card title="Purchase History" icon="receipt" href="/account/history">
+    Track all your domain transactions.
+  </Card>
+  <Card title="Domain Portfolio" icon="globe" href="/account/domains">
+    Manage renewals and configurations.
+  </Card>
+</Columns>
+
+## Update Your Profile Information
+
+Keep your contact details current to ensure smooth communications for domain renewals and transfers.
+
+<Steps>
+  <Step title="Access Profile" icon="user">
+    Click your profile icon in the navigation bar and select `Profile Settings`.
+  </Step>
+  <Step title="Edit Details" icon="edit">
+    Update fields like email, phone number, and billing address. Use a verified email for notifications.
+  </Step>
+  <Step title="Save Changes" icon="check-circle">
+    Review updates and click `Save`. You receive a confirmation email.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Enable two-factor authentication during profile updates for added security.
+</Callout>
+
+## View Purchase History
+
+Review your transaction records to track domains bought, sold, or transferred.
+
+<Tabs>
+  <Tab title="Dashboard View" icon="layout">
+    
+| Date       | Domain          | Price | Status    |
+|------------|-----------------|-------|-----------|
+| 2024-10-15 | example.com     | $12.99| Purchased |
+| 2024-09-20 | yoursite.net    | $15.99| Renewed   |
+| 2024-08-10 | myproject.org   | $10.99| Transferred |
+
+    Export this table as CSV for records.
+  </Tab>
+  <Tab title="API Access" icon="code">
+    Fetch history programmatically.
+
+    <CodeGroup tabs="JavaScript,cURL">
+      ```javascript
+      const response = await fetch('https://api.safe.domains/v1/account/history', {
+        headers: {
+          'Authorization': `Bearer ${YOUR_API_TOKEN}`
+        }
+      });
+      const history = await response.json();
+      console.log(history.purchases);
+      ```
+
+      ```bash
+      curl -H "Authorization: Bearer YOUR_API_TOKEN" \
+           https://api.safe.domains/v1/account/history
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Manage Renewals and Domain Portfolio
+
+Monitor expiration dates and set up auto-renewals to avoid losing domains.
+
+<Expandable title="Configure Auto-Renewal" default-open="true">
+  Navigate to `Domains` > `Renewals`. Toggle auto-renew for each domain and select payment method. Safe charges your default card 30 days before expiration.
+</Expandable>
+
+Use these steps for manual renewals:
+
+<Steps>
+  <Step title="Select Domain" icon="globe">
+    Go to your portfolio and choose the expiring domain.
+  </Step>
+  <Step title="Renew Now" icon="calendar">
+    Click `Renew` and confirm payment.
+  </Step>
+</Steps>
+
+## Privacy and Security Settings
+
+Protect your data with robust controls.
+
+<Callout kind="alert">
+  Never share your account credentials. Use unique passwords and enable 2FA immediately.
+</Callout>
+
+<ExpandableGroup>
+  <Expandable title="WHOIS Privacy">
+    Enable free WHOIS privacy for all domains to hide personal details from public databases.
+  </Expandable>
+  <Expandable title="Session Management">
+    Review active sessions and log out from unused devices.
+  </Expandable>
+</ExpandableGroup>
+
+These settings ensure your Safe account remains secure while giving you full control over your domain assets. Regularly check your dashboard for updates.
